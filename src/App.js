@@ -10,9 +10,13 @@ const App = () => {
   const filterOptions = (e) => {
     if(e.target.value.length === 0) {
       setList(listOptions)
-    } else {
+    } else if(e.target.value.length === 1) {
       let textInput = e.target.value.toLowerCase()
       let filteredList = listOptions.filter(el => el.toLowerCase().startsWith(textInput))
+      setList(filteredList);
+    } else {
+      let textInput = e.target.value.toLowerCase()
+      let filteredList = listOptions.filter(el => el.toLowerCase().includes(textInput))
       setList(filteredList);
     }
   }
