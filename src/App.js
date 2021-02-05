@@ -23,10 +23,11 @@ const App = () => {
         <label>Auto Complete Widget:</label>
         <input 
           type="text" 
-          list="fruits" 
+          list="dictionary"
+          id="words"
           onChange={filterOptions}
         />
-        <datalist id="fruits">
+        <datalist id="dictionary">
           {list.map((el,i) => <option key={i}>{el}</option> )}
         </datalist>
       </div>
